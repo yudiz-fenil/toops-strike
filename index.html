@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Toops Strike</title>
+
+	<link rel="shortcut icon" href="assets/images/logo.png" type="image/png">
+	<link rel="stylesheet preload" as="font" href="assets/fonts/Square.ttf" type="font/ttf" crossorigin />
+
+	<script src="lib/phaser.min.js"></script>
+	<script src="src/components/UserComponent.js"></script>
+	<script src="src/scenes/Preload.js"></script>
+	<script src="src/scenes/Level.js"></script>
+	<script src="src/main.js"></script>
+
+	<style>
+		@font-face {
+			font-family: 'Square';
+			src: url('assets/fonts/Square.ttf');
+		}
+
+		body {
+			background-image: url('assets/images/main-bg.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		canvas {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			margin: 0 !important;
+		}
+
+		#game-division canvas {
+			max-height: calc(var(--vh, 1vh) * 100);
+		}
+
+		:root {
+			--vh: 1vh;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="game-division"></div>
+</body>
+
+</html>

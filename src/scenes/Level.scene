@@ -1,0 +1,88 @@
+{
+    "id": "01aefa93-6044-4159-8358-7e91310aa05f",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "borderWidth": 1080,
+        "borderHeight": 1920
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "6f2e8bf4-9742-49c2-b080-25ee78156810",
+            "label": "bg",
+            "texture": {
+                "key": "bg"
+            },
+            "x": 540,
+            "y": 960
+        },
+        {
+            "type": "Image",
+            "id": "15258c92-f6ad-4ffa-8358-7eee61830210",
+            "label": "top_bar",
+            "texture": {
+                "key": "top-bar"
+            },
+            "x": 540,
+            "y": 1,
+            "scaleX": 1.85,
+            "scaleY": 1.85,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "ace5108e-33f8-48f8-b1b4-b74ded4471a0",
+            "label": "arrow",
+            "scope": "CLASS",
+            "texture": {
+                "key": "arrow"
+            },
+            "x": 540,
+            "y": 211,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "d0b33d62-c91b-45e0-8552-b4844d09665f",
+            "label": "fixed_ball",
+            "scope": "CLASS",
+            "texture": {
+                "key": "fixed-ball"
+            },
+            "x": 540,
+            "y": 211,
+            "scaleX": 1.85,
+            "scaleY": 1.85
+        },
+        {
+            "type": "Text",
+            "id": "8acd764b-02ea-47ff-8af4-0e11bd28c33a",
+            "label": "txt_count_balls",
+            "scope": "CLASS",
+            "x": 494,
+            "y": 196,
+            "originX": 1,
+            "originY": 0.5,
+            "text": "4x",
+            "align": "right",
+            "fontFamily": "Square",
+            "fontSize": "36px"
+        },
+        {
+            "type": "Container",
+            "id": "f945f2d4-aa32-41e2-89fe-63a67b61b171",
+            "label": "container_balls",
+            "scope": "CLASS"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

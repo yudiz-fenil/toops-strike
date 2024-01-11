@@ -1,0 +1,193 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/arrow.png",
+                "type": "image",
+                "key": "arrow"
+            },
+            {
+                "url": "assets/images/ball.png",
+                "type": "image",
+                "key": "ball"
+            },
+            {
+                "url": "assets/images/buttons/btn_play.png",
+                "type": "image",
+                "key": "btn_play"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_0_0.png",
+                "type": "image",
+                "key": "circle_0_0"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_0_1.png",
+                "type": "image",
+                "key": "circle_0_1"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_1_0.png",
+                "type": "image",
+                "key": "circle_1_0"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_1_1.png",
+                "type": "image",
+                "key": "circle_1_1"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_2_0.png",
+                "type": "image",
+                "key": "circle_2_0"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_2_1.png",
+                "type": "image",
+                "key": "circle_2_1"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_3_0.png",
+                "type": "image",
+                "key": "circle_3_0"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_3_1.png",
+                "type": "image",
+                "key": "circle_3_1"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_4_0.png",
+                "type": "image",
+                "key": "circle_4_0"
+            },
+            {
+                "url": "assets/images/shapes/circles/circle_4_1.png",
+                "type": "image",
+                "key": "circle_4_1"
+            },
+            {
+                "url": "assets/images/fixed-ball.png",
+                "type": "image",
+                "key": "fixed-ball"
+            },
+            {
+                "url": "src/scripts/GameManager.js",
+                "type": "script",
+                "key": "GameManager"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_0_0.png",
+                "type": "image",
+                "key": "square_0_0"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_0_1.png",
+                "type": "image",
+                "key": "square_0_1"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_1_0.png",
+                "type": "image",
+                "key": "square_1_0"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_1_1.png",
+                "type": "image",
+                "key": "square_1_1"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_2_0.png",
+                "type": "image",
+                "key": "square_2_0"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_2_1.png",
+                "type": "image",
+                "key": "square_2_1"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_3_0.png",
+                "type": "image",
+                "key": "square_3_0"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_3_1.png",
+                "type": "image",
+                "key": "square_3_1"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_4_0.png",
+                "type": "image",
+                "key": "square_4_0"
+            },
+            {
+                "url": "assets/images/shapes/squares/square_4_1.png",
+                "type": "image",
+                "key": "square_4_1"
+            },
+            {
+                "url": "assets/images/top-bar.png",
+                "type": "image",
+                "key": "top-bar"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_0_0.png",
+                "type": "image",
+                "key": "triangle_0_0"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_0_1.png",
+                "type": "image",
+                "key": "triangle_0_1"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_1_0.png",
+                "type": "image",
+                "key": "triangle_1_0"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_1_1.png",
+                "type": "image",
+                "key": "triangle_1_1"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_2_0.png",
+                "type": "image",
+                "key": "triangle_2_0"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_2_1.png",
+                "type": "image",
+                "key": "triangle_2_1"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_3_0.png",
+                "type": "image",
+                "key": "triangle_3_0"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_3_1.png",
+                "type": "image",
+                "key": "triangle_3_1"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_4_0.png",
+                "type": "image",
+                "key": "triangle_4_0"
+            },
+            {
+                "url": "assets/images/shapes/triangles/triangle_4_1.png",
+                "type": "image",
+                "key": "triangle_4_1"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
