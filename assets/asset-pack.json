@@ -77,6 +77,11 @@
                 "key": "GameManager"
             },
             {
+                "url": "src/scenes/Home.js",
+                "type": "sceneFile",
+                "key": "Home"
+            },
+            {
                 "url": "assets/images/shapes/squares/square_0_0.png",
                 "type": "image",
                 "key": "square_0_0"

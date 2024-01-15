@@ -1,8 +1,11 @@
 class GameManager {
     constructor(oScene) {
-        this.nInitialBalls = 4;
-        this.nShapeInitialCount = 4;
-        this.nShapeCountIncreaseBy = 2;
+        this.oScene = oScene;
+        this.nInitialBalls = 5;
+        this.nBallSpeed = 35;
+        this.nShapeInitialCount = 1;
+        this.nLaunchDelay = 500;
+        this.nShapeCountIncreaseBy = 1;
         this.nShapeCountDecreaseBy = 1;
     }
 }

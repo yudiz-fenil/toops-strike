@@ -21,9 +21,9 @@ window.addEventListener('load', function () {
 			default: 'matter',
 			matter: {
 				gravity: {
-					y: 1,
+					y: 2,
 				},
-				debug: true,
+				debug: false,
 			}
 		}
 	});
@@ -31,7 +31,7 @@ window.addEventListener('load', function () {
 	game.scene.add("Preload", Preload);
 	game.scene.add("Level", Level);
 	game.scene.add("Boot", Boot, true);
-	console.clear();
+	// console.clear();
 });
 
 class Boot extends Phaser.Scene {

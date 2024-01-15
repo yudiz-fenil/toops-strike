@@ -20,62 +20,103 @@
             "y": 960
         },
         {
-            "type": "Image",
-            "id": "15258c92-f6ad-4ffa-8358-7eee61830210",
-            "label": "top_bar",
-            "texture": {
-                "key": "top-bar"
-            },
-            "x": 540,
-            "y": 1,
-            "scaleX": 1.85,
-            "scaleY": 1.85,
-            "originY": 0
-        },
-        {
-            "type": "Image",
-            "id": "ace5108e-33f8-48f8-b1b4-b74ded4471a0",
-            "label": "arrow",
-            "scope": "CLASS",
-            "texture": {
-                "key": "arrow"
-            },
-            "x": 540,
-            "y": 211,
-            "originY": 0
-        },
-        {
-            "type": "Image",
-            "id": "d0b33d62-c91b-45e0-8552-b4844d09665f",
-            "label": "fixed_ball",
-            "scope": "CLASS",
-            "texture": {
-                "key": "fixed-ball"
-            },
-            "x": 540,
-            "y": 211,
-            "scaleX": 1.85,
-            "scaleY": 1.85
-        },
-        {
-            "type": "Text",
-            "id": "8acd764b-02ea-47ff-8af4-0e11bd28c33a",
-            "label": "txt_count_balls",
-            "scope": "CLASS",
-            "x": 494,
-            "y": 196,
-            "originX": 1,
-            "originY": 0.5,
-            "text": "4x",
-            "align": "right",
-            "fontFamily": "Square",
-            "fontSize": "36px"
+            "type": "Container",
+            "id": "a26e94fe-ec40-418a-97b2-b0287ab3bd0d",
+            "label": "container_shapes",
+            "scope": "CLASS"
         },
         {
             "type": "Container",
             "id": "f945f2d4-aa32-41e2-89fe-63a67b61b171",
             "label": "container_balls",
             "scope": "CLASS"
+        },
+        {
+            "type": "Container",
+            "id": "1977edea-fcd7-46c1-818e-d00aec47f1c5",
+            "label": "container_header",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "15258c92-f6ad-4ffa-8358-7eee61830210",
+                    "label": "top_bar",
+                    "texture": {
+                        "key": "top-bar"
+                    },
+                    "x": 540,
+                    "y": 1,
+                    "scaleX": 1.85,
+                    "scaleY": 1.85,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "ace5108e-33f8-48f8-b1b4-b74ded4471a0",
+                    "label": "arrow",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "arrow"
+                    },
+                    "x": 540,
+                    "y": 211,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "d0b33d62-c91b-45e0-8552-b4844d09665f",
+                    "label": "fixed_ball",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "fixed-ball"
+                    },
+                    "x": 540,
+                    "y": 211,
+                    "scaleX": 1.85,
+                    "scaleY": 1.85
+                },
+                {
+                    "type": "Text",
+                    "id": "8acd764b-02ea-47ff-8af4-0e11bd28c33a",
+                    "label": "txt_count_balls",
+                    "scope": "CLASS",
+                    "x": 492,
+                    "y": 184,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "text": "4x",
+                    "align": "right",
+                    "fontFamily": "Square",
+                    "fontSize": "44px"
+                },
+                {
+                    "type": "Text",
+                    "id": "173a0946-da83-4815-8d86-3c9aaefdb624",
+                    "label": "txt_score",
+                    "scope": "CLASS",
+                    "x": 540,
+                    "y": 62,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "SCORE: 00",
+                    "align": "center",
+                    "fontFamily": "Square",
+                    "fontSize": "74px"
+                },
+                {
+                    "type": "Text",
+                    "id": "c6eb6fab-b452-48a8-8f51-487eabaaca54",
+                    "label": "txt_bestscore",
+                    "scope": "CLASS",
+                    "x": 1063,
+                    "y": 184,
+                    "originX": 1,
+                    "originY": 0.5,
+                    "text": "BEST: 00",
+                    "align": "right",
+                    "fontFamily": "Square",
+                    "fontSize": "46px"
+                }
+            ]
         }
     ],
     "plainObjects": [],
