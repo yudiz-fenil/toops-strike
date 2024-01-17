@@ -19,11 +19,14 @@ class Level extends Phaser.Scene {
 		// bg
 		this.add.image(540, 960, "bg");
 
+		// container_balls
+		const container_balls = this.add.container(0, -1);
+
 		// container_shapes
 		const container_shapes = this.add.container(0, 0);
 
-		// container_balls
-		const container_balls = this.add.container(0, 0);
+		// container_shape_texts
+		const container_shape_texts = this.add.container(0, 0);
 
 		// container_header
 		const container_header = this.add.container(0, 0);
@@ -67,8 +70,9 @@ class Level extends Phaser.Scene {
 		txt_bestscore.setStyle({ "align": "right", "fontFamily": "Square", "fontSize": "46px" });
 		container_header.add(txt_bestscore);
 
-		this.container_shapes = container_shapes;
 		this.container_balls = container_balls;
+		this.container_shapes = container_shapes;
+		this.container_shape_texts = container_shape_texts;
 		this.arrow = arrow;
 		this.fixed_ball = fixed_ball;
 		this.txt_count_balls = txt_count_balls;
@@ -79,9 +83,11 @@ class Level extends Phaser.Scene {
 	}
 
 	/** @type {Phaser.GameObjects.Container} */
+	container_balls;
+	/** @type {Phaser.GameObjects.Container} */
 	container_shapes;
 	/** @type {Phaser.GameObjects.Container} */
-	container_balls;
+	container_shape_texts;
 	/** @type {Phaser.GameObjects.Image} */
 	arrow;
 	/** @type {Phaser.GameObjects.Image} */
@@ -99,7 +105,7 @@ class Level extends Phaser.Scene {
 	setBallCount = count => {
 		this.txt_count_balls.setText((count != null ? count : this.nBalls) + 'x');
 	}
-	createShape = (type, x, y, texture) => {
+	createShape = ({ type, x, y, texture, fontColor }) => {
 		const initialNumber = this.oGameManager.nShapeInitialCount;
 		let shape;
 		let tween
@@ -108,8 +114,8 @@ class Level extends Phaser.Scene {
 			shape.setCircle(51);
 			tween = this.tweens.add({
 				targets: shape,
-				scaleX: 2,
-				scaleY: 2,
+				scaleX: 2.2,
+				scaleY: 2.2,
 				yoyo: true,
 				repeat: -1
 			})
@@ -118,7 +124,7 @@ class Level extends Phaser.Scene {
 			shape.setRectangle(102, 102);
 			tween = this.tweens.add({
 				targets: shape,
-				duration: 10000,
+				duration: Phaser.Math.Between(9500, 10000),
 				angle: Math.random() > 0.5 ? 360 : -360,
 				repeat: -1
 			})
@@ -128,9 +134,10 @@ class Level extends Phaser.Scene {
 			shape.setBody({ type: 'fromVertices', vertices: vertices });
 		}
 
-		const blockText = this.add.text(0, 0, initialNumber.toString(), { fontSize: '94px', fontFamily: 'Square', fill: '#ffffff' });
+		const blockText = this.add.text(0, 0, initialNumber.toString(), { fontSize: '94px', fontFamily: 'Square', fill: fontColor });
 		blockText.setOrigin(0.5);
 		blockText.setPosition(shape.x, shape.y);
+		this.container_shape_texts.add(blockText);
 		shape.setData('text', blockText);
 		shape.setData('tween', tween);
 
@@ -141,6 +148,7 @@ class Level extends Phaser.Scene {
 		return shape;
 	}
 	setGameOver = () => {
+		console.log("first")
 		localStorage.setItem("ToopsStrikeScore", Math.max(this.nScore, this.nBestScore));
 		this.scene.restart('Level');
 	}
@@ -156,6 +164,7 @@ class Level extends Phaser.Scene {
 		this.oGameManager = new GameManager(this);
 		this.nBalls = this.oGameManager.nInitialBalls;
 		this.nScore = 0;
+		this.isBallFinished = true;
 		this.nBestScore = localStorage.getItem('ToopsStrikeScore') == null ? 0 : Math.max(localStorage.getItem('ToopsStrikeScore'), 0);
 		const formattedHighScore = this.nBestScore < 10 ? '0' + this.nBestScore : this.nBestScore;
 		this.txt_bestscore.setText("BEST: " + formattedHighScore);
@@ -185,28 +194,33 @@ class Level extends Phaser.Scene {
 	getRandomShapeConfig = () => {
 		const shapeTypes = ['circle', 'square'];
 		const numConfigs = Phaser.Math.Between(1, 2);
+		const fontColors = ["#78e777", "#e4d13a", "#de5a4e", "#df5ee3", "#e1a72f"];
 		const configs = [];
 		const randomY = Phaser.Math.Between(1750, 1800);
-		let randomX = Phaser.Math.Between(135, 948);
+		let randomX = Phaser.Math.Between(203, 877);
 		let textureIndex = Phaser.Math.Between(0, 4);
+		let fontColor = fontColors[textureIndex];
 		let shape = shapeTypes[Phaser.Math.Between(0, shapeTypes.length - 1)];
 		let texture = `${shape}_${textureIndex}_0`;
 		configs.push({
-			shape: shape,
+			type: shape,
 			x: randomX,
 			y: randomY,
-			texture: texture
+			texture: texture,
+			fontColor: fontColor,
 		});
 		if (numConfigs === 2) {
-			(randomX < 540) ? randomX = Phaser.Math.Between(600, 948) : randomX = Phaser.Math.Between(135, 480);
+			(randomX <= 540) ? randomX = Phaser.Math.Between(796, 877) : randomX = Phaser.Math.Between(203, 284);
 			textureIndex = Phaser.Math.Between(0, 4);
+			fontColor = fontColors[textureIndex];
 			shape = shapeTypes[Phaser.Math.Between(0, shapeTypes.length - 1)];
 			texture = `${shape}_${textureIndex}_0`;
 			configs.push({
-				shape: shape,
+				type: shape,
 				x: randomX,
 				y: randomY,
-				texture: texture
+				texture: texture,
+				fontColor: fontColor,
 			});
 		}
 		return configs;
@@ -225,9 +239,7 @@ class Level extends Phaser.Scene {
 	}
 	createStaticShapes = () => {
 		const configs = this.getRandomShapeConfig();
-		configs.forEach(config => {
-			this.createShape(config.shape, config.x, config.y, config.texture);
-		})
+		configs.forEach(config => this.createShape(config))
 	}
 	handleShapeCollision = shape => {
 		if (shape.getData('text')) {
@@ -260,39 +272,46 @@ class Level extends Phaser.Scene {
 				const text = shape.getData('text');
 				this.tweens.add({
 					targets: [text, shape],
-					y: shape.y - 256,
+					y: shape.y - 286,
 					duration: 200,
 					onComplete: () => {
-						this.setBallCount(this.nBalls);
 						if (shape.y <= 305) {
 							setTimeout(() => {
 								this.setGameOver();
-							}, 100);
+								return;
+							}, 150);
 						}
 					}
 				})
 			});
 			setTimeout(() => {
 				this.oGameManager.nShapeInitialCount++;
+				this.setBallCount(this.nBalls);
+				this.isBallFinished = true;
 				this.createStaticShapes();
 			}, 300);
 		}
 	}
 	onPointerDown = (pointer) => {
-		this.input.mouse.requestPointerLock();
-		this.arrow.setVisible(true);
+		if (this.isBallFinished) {
+			this.input.mouse.requestPointerLock();
+			this.arrow.setVisible(true);
+		}
 	}
 	onPointerUp = (pointer) => {
-		this.input.mouse.releasePointerLock();
-		this.arrow.setVisible(false);
-		this.pointerLocation.set(pointer.x, pointer.y);
-		this.launchBalls();
+		if (this.isBallFinished) {
+			this.isBallFinished = false;
+			this.input.mouse.releasePointerLock();
+			this.arrow.setVisible(false);
+			this.pointerLocation.set(pointer.x, pointer.y);
+			this.launchBalls();
+		}
 	}
 	onPointerMove = (pointer) => {
-		if (this.input.mouse.locked) {
+		if (this.input.mouse.locked && this.arrow.visible) {
 			this.arrow.rotation -= pointer.movementX * 0.008;
 			this.arrow.rotation = Phaser.Math.Clamp(this.arrow.rotation, -Math.PI / 2.5, Math.PI / 2.5);
-		} else if (pointer.isDown) {
+		} else if (pointer.isDown && this.arrow.visible) {
 			this.updateArrowDirection(pointer);
 		}
 	}
